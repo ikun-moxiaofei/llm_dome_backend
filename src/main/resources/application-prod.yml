@@ -1,0 +1,34 @@
+# 线上配置文件
+server:
+  port: 8101
+spring:
+  # 数据库配置
+  # todo 需替换配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dialogue
+    username: root
+    password: 123456
+
+mybatis-plus:
+  configuration:
+    # 生产环境关闭日志
+    log-impl: ''
+# 接口文档的配置
+springdoc:
+  group-configs:
+    - group: 'default'
+      packages-to-scan: com.mxf.springbootinit.controller
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  # 开启增强配置
+  enable: true
+  # 开启生产环境屏蔽
+  production: true
+  # 开启Swagger的Basic认证功能,默认是false
+  basic:
+    enable: true
+    # Basic认证用户名
+    username: root
+    # Basic认证密码
+    password: 123456
